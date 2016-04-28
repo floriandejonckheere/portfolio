@@ -23,34 +23,23 @@ module.exports = function(grunt) {
         tasks: ['build']
       }
     },
-    includes: {
-      files: {
-        src: ['src/html/*.html'],
-        dest: 'dist/',
-        flatten: true,
-        cwd: '.',
-        options: {
-          silent: true,
-          includePath: 'src/html/partials',
-          filenamePrefix: '_',
-          filenameSuffix: '.html',
-          includeRegex: /^(\s*)\@include\s+"(\S+)"\s*$/
-        }
-      }
-    },
     copy: {
       main: {
         files: [
           { expand: true, flatten: true, src: 'src/robots.txt', dest: 'dist/' },
           { expand: true, cwd: 'src/files/', src: '**', dest: 'dist/files/' },
           { expand: true, cwd: 'src/js/', src: '**', dest: 'dist/js/' },
+          { expand: true, cwd: 'src/html/', src: '**', dest: 'dist/' },
           { expand: true, cwd: 'bower_components/font-awesome/fonts/', src: '**', dest: 'dist/assets/fonts/' },
 
           { expand: true, cwd: 'bower_components/oswald-googlefont/', src: '*.ttf', dest: 'dist/assets/fonts/' },
           { expand: true, cwd: 'bower_components/source-sans-pro/fonts/source-sans-pro/', src: '*', dest: 'dist/assets/fonts/' },
           { expand: true, cwd: 'bower_components/lato/font/', src: '**', dest: 'dist/assets/fonts/' },
 
-          { expand: true, flatten: true, src: 'bower_components/jquery/dist/jquery.min.js', dest: 'dist/assets/js/' }
+          { expand: true, flatten: true, src: 'bower_components/jquery/dist/jquery.min.js', dest: 'dist/assets/js/' },
+          { expand: true, flatten: true, src: 'bower_components/angular/angular.min.js', dest: 'dist/assets/js' },
+          { expand: true, flatten: true, src: 'bower_components/angular-route/angular-route.min.js', dest: 'dist/assets/js' },
+          { expand: true, flatten: true, src: 'bower_components/angular-animate/angular-animate.min.js', dest: 'dist/assets/js' }
         ]
       }
     },
@@ -73,9 +62,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-includes');
-  grunt.registerTask('default', ['watch']);
-  grunt.registerTask('build', ['sass', 'includes', 'copy']);
+
+  grunt.registerTask('build', ['sass', 'copy']);
+  grunt.registerTask('default', ['build', 'watch']);
   grunt.registerTask('deploy_ftp', ['build', 'ftp-deploy:build']);
   grunt.registerTask('deploy_ssh', ['build', 'ssh_deploy:production']);
 }
