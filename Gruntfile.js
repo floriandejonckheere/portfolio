@@ -65,14 +65,16 @@ module.exports = function(grunt) {
       }
     },
     environments: {
-      options: {
-        host: 'thalarion.be',
-        username: 'florian',
-        agent: process.env.SSH_AUTH_SOCK,
+      environment: {
+        options: {
+          host: 'thalarion.be',
+          username: 'florian',
+          agent: process.env.SSH_AUTH_SOCK,
 
-        local_path: 'dist',
-        deploy_path: deploy[env].name,
-        releases_to_keep: 3
+          local_path: 'dist',
+          deploy_path: deploy[env].path,
+          releases_to_keep: 3
+        }
       }
     }
   });
@@ -86,5 +88,5 @@ module.exports = function(grunt) {
   grunt.registerTask('build', ['sass', 'copy', 'string-replace']);
   grunt.registerTask('default', ['build', 'watch']);
 
-  grunt.registerTask('deploy', ['build', 'ssh_deploy']);
+  grunt.registerTask('deploy', ['build', 'ssh_deploy:environment']);
 }
