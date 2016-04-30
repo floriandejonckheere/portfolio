@@ -1,12 +1,12 @@
 module.exports = function(grunt) {
-  require('load-grunt-tasks')(grunt); // npm install --save-dev load-grunt-tasks
+  require('load-grunt-tasks')(grunt);
 
   var env = process.env.ENV || 'development';
 
-  var basePath = new Array();
-  basePath['development'] = '/';
-  basePath['staging'] = '/staging/';
-  basePath['production'] = 'https://florian.dejonckhee.re/';
+  var deploy = require('./deploy.json');
+  deploy['development'] = {
+    'base': '/'
+  };
 
   grunt.initConfig({
     sass: {
@@ -51,41 +51,28 @@ module.exports = function(grunt) {
     },
     'string-replace': {
       inline: {
-        files: {
-          'dist/': 'src/html/**',
-        },
+        files: [
+          { expand: true, cwd: 'src/html/', src: '**', dest: 'dist/' }
+        ],
         options: {
           replacements: [
             {
               pattern: '%%BASE_PATH%%',
-              replacement: basePath[env]
+              replacement: deploy[env].base
             }
           ]
         }
       }
     },
     environments: {
-      staging: {
-        options: {
-          host: 'thalarion.be',
-          username: 'florian',
-          agent: process.env.SSH_AUTH_SOCK,
+      options: {
+        host: 'thalarion.be',
+        username: 'florian',
+        agent: process.env.SSH_AUTH_SOCK,
 
-          local_path: 'dist',
-          deploy_path: '/srv/http/staging/florian.dejonckhee.re/',
-          releases_to_keep: 3
-        }
-      },
-      production: {
-        options: {
-          host: 'thalarion.be',
-          username: 'florian',
-          agent: process.env.SSH_AUTH_SOCK,
-
-          local_path: 'dist',
-          deploy_path: '/srv/http/florian.dejonckhee.re/',
-          releases_to_keep: 3
-        }
+        local_path: 'dist',
+        deploy_path: deploy[env].name,
+        releases_to_keep: 3
       }
     }
   });
@@ -99,5 +86,5 @@ module.exports = function(grunt) {
   grunt.registerTask('build', ['sass', 'copy', 'string-replace']);
   grunt.registerTask('default', ['build', 'watch']);
 
-  grunt.registerTask('deploy', ['build', 'ssh_deploy:' + env]);
+  grunt.registerTask('deploy', ['build', 'ssh_deploy']);
 }

@@ -1,0 +1,10 @@
+{
+  "staging": {
+    "path": "/srv/http/staging/florian.dejonckhee.re",
+    "base": "https://florian.dejonckhee.re/staging/"
+  },
+  "production": {
+    "path": "/srv/http/florian.dejonckhee.re",
+    "base": "https://florian.dejonckhee.re/"
+  }
+}
