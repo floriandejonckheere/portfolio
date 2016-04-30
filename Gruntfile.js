@@ -1,6 +1,13 @@
 module.exports = function(grunt) {
   require('load-grunt-tasks')(grunt); // npm install --save-dev load-grunt-tasks
 
+  var env = process.env.ENV || 'development';
+
+  var basePath = new Array();
+  basePath['development'] = '/';
+  basePath['staging'] = '/staging/';
+  basePath['production'] = 'https://florian.dejonckhee.re/';
+
   grunt.initConfig({
     sass: {
       options: {
@@ -29,7 +36,6 @@ module.exports = function(grunt) {
           { expand: true, flatten: true, src: 'src/robots.txt', dest: 'dist/' },
           { expand: true, cwd: 'src/files/', src: '**', dest: 'dist/files/' },
           { expand: true, cwd: 'src/js/', src: '**', dest: 'dist/js/' },
-          { expand: true, cwd: 'src/html/', src: '**', dest: 'dist/' },
           { expand: true, cwd: 'bower_components/font-awesome/fonts/', src: '**', dest: 'dist/assets/fonts/' },
 
           { expand: true, cwd: 'bower_components/oswald-googlefont/', src: '*.ttf', dest: 'dist/assets/fonts/' },
@@ -43,7 +49,33 @@ module.exports = function(grunt) {
         ]
       }
     },
+    'string-replace': {
+      inline: {
+        files: {
+          'dist/': 'src/html/**',
+        },
+        options: {
+          replacements: [
+            {
+              pattern: '%%BASE_PATH%%',
+              replacement: basePath[env]
+            }
+          ]
+        }
+      }
+    },
     environments: {
+      staging: {
+        options: {
+          host: 'thalarion.be',
+          username: 'florian',
+          agent: process.env.SSH_AUTH_SOCK,
+
+          local_path: 'dist',
+          deploy_path: '/srv/http/staging/florian.dejonckhee.re/',
+          releases_to_keep: 3
+        }
+      },
       production: {
         options: {
           host: 'thalarion.be',
@@ -62,9 +94,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-string-replace');
 
-  grunt.registerTask('build', ['sass', 'copy']);
+  grunt.registerTask('build', ['sass', 'copy', 'string-replace']);
   grunt.registerTask('default', ['build', 'watch']);
-  grunt.registerTask('deploy_ftp', ['build', 'ftp-deploy:build']);
-  grunt.registerTask('deploy_ssh', ['build', 'ssh_deploy:production']);
+
+  grunt.registerTask('deploy', ['build', 'ssh_deploy:' + env]);
 }

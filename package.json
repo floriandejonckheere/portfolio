@@ -21,6 +21,7 @@
     "load-grunt-tasks": "^3.3.0"
   },
   "dependencies": {
+    "grunt-string-replace": "^1.2.1",
     "jquery": "^2.2.1"
   }
 }
