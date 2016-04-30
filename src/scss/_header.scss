@@ -1,4 +1,6 @@
 header {
+  @include animate;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -7,18 +9,7 @@ header {
   background-color: $color-cover;
   color: white;
 
-  height: 400px;
-
-  &.cover {
-    height: 100vh;
-
-    nav {
-      margin-top: 0;
-      margin-bottom: auto;
-
-      padding-top: 7.5 * $spacing-unit;
-    }
-  }
+  height: 100vh;
 
   h1 {
     @include link-color(white, none);
@@ -32,6 +23,18 @@ header {
   }
 
   nav {
+    @include animate;
+
     margin-top: auto;
+    margin-bottom: 50vh;
+  }
+
+
+  &.header {
+    height: 55vh;
+
+    nav {
+      margin-bottom: 0;
+    }
   }
 }
