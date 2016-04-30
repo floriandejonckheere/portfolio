@@ -8,11 +8,15 @@ var site = angular.module('site', [
   'ngAnimate'
 ]);
 
-site.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+site.config(['$routeProvider', function($routeProvider) {
   $routeProvider
+    .when('/', {
+      activeTab: 'cover',
+      controller: 'mainController'
+    })
     .when('/home', {
       templateUrl: 'templates/home.html',
-      controller: 'mainController'
+      activeTab: 'home'
     })
     .when('/about', {
       templateUrl: 'templates/about.html',
@@ -27,10 +31,8 @@ site.config(['$routeProvider', '$locationProvider', function($routeProvider, $lo
       activeTab: 'contact'
     })
     .otherwise({
-      redirectTo: '/home'
+      redirectTo: '/'
     });
-
-    $locationProvider.html5Mode(true);
 }]);
 
 site.controller('mainController', function($scope, $route) {

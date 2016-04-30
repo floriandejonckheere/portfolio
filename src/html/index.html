@@ -18,12 +18,12 @@
 
     <script type="text/JavaScript" src="js/application.js"></script>
 
-    <base href="/">
+    <base href="%%BASE_PATH%%">
   </head>
   <body ng-controller="mainController">
     <div class="wrapper">
-      <header>
-        <h1><a href="home">Florian Dejonckheere</a></h1>
+      <header ng-class="{cover: $route.current.activeTab == 'cover'}">
+        <h1><a href="#/">Florian Dejonckheere</a></h1>
 
         <nav>
           <!-- Responsive menu button -->
@@ -33,17 +33,18 @@
           </label>
 
           <ul>
-            <li ng-class="{active: $route.current.activeTab == 'about'}"><a href="about">About me</a></li>
-            <li ng-class="{active: $route.current.activeTab == 'links'}"><a href="links">Links</a></li>
-            <li ng-class="{active: $route.current.activeTab == 'contact'}"><a href="contact">Contact</a></li>
+            <li ng-class="{active: $route.current.activeTab == 'home'}"><a href="#home">Home</a></li>
+            <li ng-class="{active: $route.current.activeTab == 'about'}"><a href="#about">About me</a></li>
+            <li ng-class="{active: $route.current.activeTab == 'links'}"><a href="#links">Links</a></li>
+            <li ng-class="{active: $route.current.activeTab == 'contact'}"><a href="#contact">Contact</a></li>
           </ul>
         </nav>
       </header>
 
-      <main ng-view>
+      <main ng-view ng-hide="cover">
       </main>
 
-      <footer>
+      <footer ng-hide="$route.current.activeTab == 'cover'">
         <a href="https://florian.dejonckhee.re/">&copy; 2016 Florian Dejonckheere. All rights reserved</a>
       </footer>
     </div>
