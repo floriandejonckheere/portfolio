@@ -7,15 +7,15 @@
 }
 
 article {
-  transition: .25s linear all;
+  @include animate;
 
   &.ng-enter,
   &.ng-leave.ng-leave-active {
-    left: -100%;
+    opacity: 0;
   }
 
   &.ng-enter.ng-enter-active,
   &.ng-leave {
-    left: 0;
+    opacity: 1;
   }
 }

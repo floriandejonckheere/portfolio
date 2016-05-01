@@ -15,6 +15,8 @@ nav ul {
   }
 
   li > a {
+    padding: $spacing-md;
+
     display: block;
 
     background-color: $color-tertiary;
@@ -36,7 +38,7 @@ nav ul {
   text-align: center;
   vertical-align: center;
 
-  background: $color-tertiary;
+  background: $color-cover;
   color: $color-tertiary-text;
 
   cursor: pointer;
@@ -50,7 +52,7 @@ nav ul {
   transition: left .3s ease-in;
 
   &:hover {
-    background-color: lighten($color-tertiary, 10%);
+    background-color: lighten($color-cover, 10%);
   }
 }
 
@@ -58,8 +60,16 @@ input[type="checkbox"]#menu-toggle {
   display: none;
 
   &:checked {
+    background-color: $color-cover;
     & ~ ul { left: 0; }
-    & ~ #menu-button { left: calc(100% - 64px); }
+    & ~ #menu-button {
+      background-color: $color-tertiary;
+
+      &:hover {
+        background-color: lighten($color-tertiary, 10%);
+      }
+      left: calc(100% - 64px);
+    }
   }
 }
 
@@ -72,7 +82,7 @@ input[type="checkbox"]#menu-toggle {
     transition: all .3s ease-in;
 
     li a:hover {
-      background-color: lighten($color-tertiary, 10%);
+      background-color: lighten($color-cover, 10%);
     }
   }
 }
