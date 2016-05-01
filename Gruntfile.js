@@ -76,7 +76,8 @@ module.exports = function(grunt) {
           releases_to_keep: 3
         }
       }
-    }
+    },
+    clean: ['dist/']
   });
 
   grunt.loadNpmTasks('grunt-ssh-deploy');
@@ -84,9 +85,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-string-replace');
+  grunt.loadNpmTasks('grunt-contrib-clean');
 
   grunt.registerTask('build', ['sass', 'copy', 'string-replace']);
-  grunt.registerTask('default', ['build', 'watch']);
+  grunt.registerTask('default', ['clean', 'build', 'watch']);
 
-  grunt.registerTask('deploy', ['build', 'ssh_deploy:environment']);
+  grunt.registerTask('deploy', ['clean', 'build', 'ssh_deploy:environment']);
 }
