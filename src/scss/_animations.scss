@@ -5,17 +5,3 @@
   -ms-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
 }
-
-article {
-  @include animate;
-
-  &.ng-enter,
-  &.ng-leave.ng-leave-active {
-    opacity: 0;
-  }
-
-  &.ng-enter.ng-enter-active,
-  &.ng-leave {
-    opacity: 1;
-  }
-}

@@ -38,9 +38,9 @@ module.exports = function(grunt) {
           { expand: true, cwd: 'src/js/', src: '**', dest: 'dist/js/' },
           { expand: true, cwd: 'bower_components/font-awesome/fonts/', src: '**', dest: 'dist/assets/fonts/' },
 
-          { expand: true, cwd: 'bower_components/oswald-googlefont/', src: '*.ttf', dest: 'dist/assets/fonts/' },
-          { expand: true, cwd: 'bower_components/source-sans-pro/fonts/source-sans-pro/', src: '*', dest: 'dist/assets/fonts/' },
-          { expand: true, cwd: 'bower_components/lato/font/', src: '**', dest: 'dist/assets/fonts/' },
+          { expand: true, cwd: 'bower_components/oswald-googlefont/', src: 'Oswald-Regular.ttf', dest: 'dist/assets/fonts/' },
+          { expand: true, cwd: 'bower_components/source-sans-pro/fonts/source-sans-pro/', src: 'source-sans-pro-{light,regular}*', dest: 'dist/assets/fonts/' },
+          { expand: true, cwd: 'bower_components/lato/font/', src: 'lato-bold/*', dest: 'dist/assets/fonts/' },
 
           { expand: true, flatten: true, src: 'bower_components/jquery/dist/jquery.min.js', dest: 'dist/assets/js/' },
           { expand: true, flatten: true, src: 'bower_components/angular/angular.min.js', dest: 'dist/assets/js' },
