@@ -1,6 +1,8 @@
 article {
   @include p-x-sm;
 
+  line-height: 1.25 * $text-unit;
+
   h2 {
     margin: $spacing-xl 0;
   }

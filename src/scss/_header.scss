@@ -23,6 +23,14 @@ header {
     text-transform: uppercase;
   }
 
+  h2 {
+    color: darken(white, 10%);
+
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+    font-size: $text-lg;
+  }
+
   nav {
     @include animate;
 
@@ -31,7 +39,7 @@ header {
   }
 
 
-  &.header {
+  &.cover {
     height: 55vh;
 
     nav {

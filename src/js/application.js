@@ -14,13 +14,13 @@ site.config(['$routeProvider', function($routeProvider) {
       activeTab: 'cover',
       controller: 'mainController'
     })
-    .when('/home', {
-      templateUrl: 'templates/home.html',
-      activeTab: 'home'
-    })
     .when('/about', {
       templateUrl: 'templates/about.html',
       activeTab: 'about'
+    })
+    .when('/portfolio', {
+      templateUrl: 'templates/portfolio.html',
+      activeTab: 'portfolio'
     })
     .when('/links', {
       templateUrl: 'templates/links.html',
