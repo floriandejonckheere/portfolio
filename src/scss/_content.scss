@@ -1,5 +1,6 @@
 article {
   @include p-x-sm;
+  @include p-y-xl;
 
   line-height: 1.25 * $text-unit;
 

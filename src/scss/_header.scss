@@ -1,5 +1,5 @@
 header {
-  @include animate;
+  @include transition;
 
   display: flex;
   flex-direction: column;
@@ -9,10 +9,12 @@ header {
   background-color: $color-cover;
   color: white;
 
-  min-height: 150px;
+  min-height: 200px;
   height: 100vh;
 
   h1 {
+    @include p-x-md;
+
     @include link-color(white, none);
 
     margin-top: auto;
@@ -21,6 +23,10 @@ header {
     font-weight: 400;
     font-size: $text-xxl;
     text-transform: uppercase;
+
+    a {
+      outline: none;
+    }
   }
 
   h2 {
@@ -32,7 +38,7 @@ header {
   }
 
   nav {
-    @include animate;
+    @include transition;
 
     margin-top: auto;
     margin-bottom: 30vh;

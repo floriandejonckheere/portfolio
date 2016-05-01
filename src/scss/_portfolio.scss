@@ -1,0 +1,72 @@
+$scale-factor: .9;
+
+.portfolio-container {
+  background: blue;
+  @include p-y-xl;
+
+  width: 700px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-flow: column wrap;
+  align-content: flex-end;
+
+  overflow-y:scroll;
+}
+
+.fader {
+  background: red;
+  position: relative;
+
+  height: 350px;
+  width: 350px;
+  box-sizing: border-box;
+
+  border-radius: $border-radius;
+
+  overflow: hidden;
+
+  .image {
+    position: absolute;
+
+    /* center within fader */
+    left: -25px;
+    top: -25px;
+
+    img {
+      @include transition;
+
+      @include scale($scale-factor);
+
+      -webkit-filter: grayscale(0%);
+      filter: grayscale(0%);
+    }
+  }
+
+  .overlay {
+    @include transition;
+
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    opacity: 0;
+    background-color: black;
+  }
+
+  &:hover {
+    .overlay {
+      opacity: .4;
+    }
+
+    .image img {
+      @include scale(1);
+
+      -webkit-filter: grayscale(100%);
+      filter: grayscale(100%);
+    }
+  }
+}

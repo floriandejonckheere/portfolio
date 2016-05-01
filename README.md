@@ -1,13 +1,17 @@
 # README
 
-This is my minimalist cover page. It uses a Grunt build system in order to compile the SCSS stylesheets. The source HTML files are in the `src/html` directory, which uses a templating system to insert the headers and footers in each document. The source SCSS files are in the `src/scss` folder.
-
-The compiled files are available in the `dist` folder.
+This is the source code to my website. It was hand-built using Angular, jQuery and a custom CSS microframework. It uses NPM and Bower for dependency management, and Grunt as taskrunner.
 
 ## Building
 
-Development:
+```
+$ grunt build
+$ darkhttpd --daemon dist/
+$ grunt
+```
+
+## Deployment
 
 ```
-$ grunt watch
+$ ENV=staging grunt deploy
 ```

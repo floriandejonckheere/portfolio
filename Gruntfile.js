@@ -5,7 +5,7 @@ module.exports = function(grunt) {
 
   var deploy = require('./deploy.json');
   deploy['development'] = {
-    'base': '/'
+    'base': 'http://localhost:8080/'
   };
 
   grunt.initConfig({
@@ -35,6 +35,7 @@ module.exports = function(grunt) {
         files: [
           { expand: true, flatten: true, src: 'src/robots.txt', dest: 'dist/' },
           { expand: true, cwd: 'src/files/', src: '**', dest: 'dist/files/' },
+          { expand: true, cwd: 'src/images/', src: '**', dest: 'dist/assets/images/' },
           { expand: true, cwd: 'src/js/', src: '**', dest: 'dist/js/' },
           { expand: true, cwd: 'bower_components/font-awesome/fonts/', src: '**', dest: 'dist/assets/fonts/' },
 
@@ -57,7 +58,7 @@ module.exports = function(grunt) {
         options: {
           replacements: [
             {
-              pattern: '%%BASE_PATH%%',
+              pattern: /%%BASE_PATH%%/g,
               replacement: deploy[env].base
             }
           ]
