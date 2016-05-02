@@ -6,8 +6,8 @@ This is the source code to my website. It was hand-built using Angular, jQuery a
 
 ```
 $ grunt build
-$ darkhttpd --daemon dist/
-$ grunt
+$ darkhttpd dist/ --daemon
+$ grunt watch
 ```
 
 ## Deployment
