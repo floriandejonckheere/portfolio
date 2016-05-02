@@ -20,14 +20,13 @@ $blur-radius: 2px;
 
   flex-flow: column wrap;
 
+  /* two blocks and padding */
   width: (2 * $block-width) + $block-space-between;
-
-  &.one.high   { height: $block-width; }
-  &.two.high   { height: (2 * $block-width) + $block-space-between; }
-  &.three.high { height: (3 * $block-width) + (2 * $block-space-between); }
-  &.four.high  { height: (3 * $block-width) + (2 * $block-space-between); }
+  /* four blocks and padding */
+  height: (4 * $block-width) + (3 * $block-space-between);
 
   .block {
+    border: 1px solid $color-tertiary-text;
     position: relative;
 
     border-radius: $border-radius;
@@ -85,7 +84,7 @@ $blur-radius: 2px;
       width: 100%;
       height: 100%;
 
-      @include link-color(white, none);
+      @include link-color(white);
       color: white;
 
       opacity: 0;
@@ -96,7 +95,8 @@ $blur-radius: 2px;
       justify-content: center;
 
       .title {
-        @include p-y-sm;
+        @include link-color(white, none);
+        @include p-y-md;
 
         width: 100%;
         text-align: center;
@@ -107,13 +107,15 @@ $blur-radius: 2px;
 
       .description {
         width: 80%;
-        text-align: center;
+        text-align: justify;
 
         margin-left: auto;
         margin-right: auto;
       }
 
       .buttons {
+        @include link-color(white, none);
+
         position: absolute;
         bottom: 0;
 
