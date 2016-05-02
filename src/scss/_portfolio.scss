@@ -53,6 +53,28 @@ $blur-radius: 2px;
         -webkit-filter: grayscale(0%);
         filter: grayscale(0%);
       }
+
+      &.slideshow img {
+        @include border-box-sizing;
+
+        position: absolute;
+        left: 0;
+        top: 0;
+
+        opacity: 0;
+        &:first-child { opacity: 1; }
+
+        /* TODO: mixin for slideshow with n images */
+        &:nth-child(1) { animation: xfade 8s 0s infinite; }
+        &:nth-child(2) { animation: xfade 8s 4s infinite; }
+
+        @keyframes xfade {
+         0%   { opacity: 0; }
+         10%  { opacity: 1; }
+         50%  { opacity: 1; }
+         60%  { opacity: 0; }
+        }
+      }
     }
 
     .overlay {
