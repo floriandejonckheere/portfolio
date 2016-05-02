@@ -76,8 +76,6 @@ $blur-radius: 2px;
       .title {
         @include p-y-sm;
 
-        margin-top: auto;
-
         width: 100%;
         text-align: center;
 
@@ -86,14 +84,16 @@ $blur-radius: 2px;
       }
 
       .description {
-        width: 100%;
+        width: 80%;
         text-align: center;
 
-        margin-bottom: auto;
+        margin-left: auto;
+        margin-right: auto;
       }
 
       .buttons {
-        margin-top: auto;
+        position: absolute;
+        bottom: 0;
 
         width: 100%;
 
@@ -101,7 +101,9 @@ $blur-radius: 2px;
         justify-content: space-between;
 
         a {
-          @include p-md;
+          @include p-lg;
+
+          outline: none;
         }
       }
     }
