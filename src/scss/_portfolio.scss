@@ -4,8 +4,9 @@ $block-width: 350px;
 /* padding between blocks */
 $block-space-between: 20px;
 
-/* block hover scale */
+/* hover effects */
 $scale-factor: .9;
+$blur-radius: 2px;
 
 .portfolio {
   margin-top: $spacing-lg;
@@ -62,22 +63,58 @@ $scale-factor: .9;
       width: 100%;
       height: 100%;
 
+      @include link-color(white, none);
       color: white;
 
       opacity: 0;
-      background-color: rgba(0, 0, 0, .4);
+      background-color: rgba(0, 0, 0, .5);
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .title {
+        @include p-y-sm;
+
+        margin-top: auto;
+
+        width: 100%;
+        text-align: center;
+
+        font-family: 'Oswald', sans-serif;
+        font-size: $text-xl;
+      }
+
+      .description {
+        width: 100%;
+        text-align: center;
+
+        margin-bottom: auto;
+      }
+
+      .buttons {
+        margin-top: auto;
+
+        width: 100%;
+
+        display: flex;
+        justify-content: space-between;
+
+        a {
+          @include p-md;
+        }
+      }
     }
 
+
     &:hover {
-      .overlay {
-        opacity: 1;
-      }
+      .overlay { opacity: 1; }
 
       .image img {
         @include scale(1);
 
-        -webkit-filter: grayscale(100%);
-        filter: grayscale(100%);
+        -webkit-filter: grayscale(100%) blur($blur-radius);
+        filter: grayscale(100%) blur($blur-radius);
       }
     }
   }
