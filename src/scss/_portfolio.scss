@@ -23,7 +23,7 @@ $blur-radius: 2px;
   /* two blocks and padding */
   width: (2 * $block-width) + $block-space-between;
   /* four blocks and padding */
-  height: (4 * $block-width) + (3 * $block-space-between);
+  height: (5 * $block-width) + (4 * $block-space-between);
 
   .block {
     border: 1px solid $color-tertiary-text;
