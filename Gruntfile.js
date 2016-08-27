@@ -20,7 +20,8 @@ module.exports = function(grunt) {
         files: {
           'dist/css/fonts.css': 'src/scss/fonts.scss',
           'dist/css/application.css': 'src/scss/application.scss',
-          'dist/css/reset.css': 'src/scss/reset.scss'
+          'dist/css/reset.css': 'src/scss/reset.scss',
+          'dist/css/errors.css': 'src/scss/errors.scss'
         }
       }
     },
