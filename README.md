@@ -13,6 +13,18 @@ $ npm install
 $ bower install
 ```
 
+## Setup
+
+```
+$ rvm install $(cat .ruby-version)
+$ rvm gemset create $(cat .ruby-gemset)
+$ rvm use $(cat .ruby-version)-$(cat .ruby-gemset)
+$ gem install bundler
+$ bundle install
+$ npm install
+$ bower install
+```
+
 ## Building
 
 ```
