@@ -1,6 +1,6 @@
 # README
 
-This is the source code to my website. It was hand-built using Angular, jQuery and a custom CSS microframework. It uses NPM and Bower for dependency management, and Grunt as taskrunner.
+This is the source code to my portfolio.
 
 ## Setup
 
@@ -28,13 +28,11 @@ $ bower install
 ## Building
 
 ```
-$ grunt build
-$ darkhttpd dist/ --daemon
-$ grunt watch
+$ gulp
 ```
 
 ## Deployment
 
 ```
-$ ENV=staging grunt deploy
+$ ENV=staging gulp deploy
 ```
