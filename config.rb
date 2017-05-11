@@ -12,7 +12,7 @@ activate :i18n, :langs => %i[en]
 activate :relative_assets
 
 activate :deploy do |deploy|
-  deploy.deploy_method = :sftp
+  deploy.deploy_method = :rsync
   deploy.host          = 'thalarion.be'
   if ENV['ENV'] == 'production'
     deploy.path          = '/srv/http/florian.dejonckhee.re/'
@@ -65,4 +65,6 @@ page '/*.txt', :layout => false
 configure :build do
   activate :minify_css
   activate :minify_javascript
+
+  set :strip_index_file, false
 end
