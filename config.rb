@@ -16,11 +16,7 @@ set :relative_links, true
 activate :deploy do |deploy|
   deploy.deploy_method = :rsync
   deploy.host          = 'thalarion.be'
-  if ENV['ENV'] == 'production'
-    deploy.path          = '/srv/http/florian.dejonckhee.re/'
-  else
-    deploy.path          = '/srv/http/staging/florian.dejonckhee.re/'
-  end
+  deploy.path          = '/srv/http/florian.dejonckhee.re/'
 
   # Optional Settings
   # deploy.user     = 'tvaughan' # no default
