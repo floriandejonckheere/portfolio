@@ -100,6 +100,18 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+p:not(.links) {
+  a {
+    // Reset link style
+    text-transform: none;
+    letter-spacing: normal;
+    font-size: 1em;
+
+    //text-decoration: underline dashed $color-link 3px;
+    border-bottom: 3px solid transparentize($color-accent, .6);
+  }
+}
+
 /**
  * Lists
  *
