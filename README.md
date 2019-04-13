@@ -14,17 +14,23 @@ $ bundle install
 ## Setup
 
 ```
-$ rvm install $(cat .ruby-version)
-$ rvm gemset create $(cat .ruby-gemset)
-$ rvm use $(cat .ruby-version)-$(cat .ruby-gemset)
+$ rvm install `cat .ruby-version`
+$ rvm gemset create `cat .ruby-gemset`
+$ rvm use `cat .ruby-version`-`cat .ruby-gemset`
 $ gem install bundler
 $ bundle install
+```
+
+## Developing
+
+```
+$ middleman server
 ```
 
 ## Building
 
 ```
-$ middleman
+$ middleman build
 ```
 
 ## Deployment
