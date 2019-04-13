@@ -2,9 +2,14 @@
 
 source 'https://rubygems.org'
 
-gem 'bundler', '~> 1.14'
-gem 'overcommit', '~> 0.39'
-gem 'rubocop', '~> 0.48'
+git_source(:github) do |repo_name|
+  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
+  "https://github.com/#{repo_name}.git"
+end
+
+gem 'bundler'
+gem 'overcommit'
+gem 'rubocop'
 
 gem 'middleman', '~> 4.2'
 gem 'middleman-autoprefixer', '~> 2.7'
