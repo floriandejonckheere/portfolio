@@ -15,7 +15,7 @@ set :relative_links, true
 
 activate :deploy do |deploy|
   deploy.deploy_method = :rsync
-  deploy.host          = 'thalarion.be'
+  deploy.host          = 'florian.dejonckhee.re'
   deploy.path          = '/srv/http/florian.dejonckhee.re/'
 
   # Optional Settings
