@@ -19,7 +19,7 @@ activate :deploy do |deploy|
   deploy.path          = '/srv/http/florian.dejonckhee.re/'
 
   # Optional Settings
-  # deploy.user     = 'tvaughan' # no default
+  deploy.user     = 'florian'
   # deploy.password = 'secret' # no default
 
   deploy.build_before = true # default: false
