@@ -1,6 +1,6 @@
 # README
 
-This is the source code to my portfolio.
+This is the source code to [portfolio](https://florian.dejonckhee.re/).
 
 ## Setup
 
@@ -16,7 +16,7 @@ $ bundle install
 ```
 $ rvm install `cat .ruby-version`
 $ rvm gemset create `cat .ruby-gemset`
-$ rvm use `cat .ruby-version`-`cat .ruby-gemset`
+$ rvm use .
 $ gem install bundler
 $ bundle install
 ```
