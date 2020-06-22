@@ -4,22 +4,22 @@
 # https://middlemanapp.com/advanced/configuration/#configuring-extensions
 
 activate :autoprefixer do |prefix|
-  prefix.browsers = 'last 2 versions'
+  prefix.browsers = "last 2 versions"
 end
 
 activate :livereload
-activate :i18n, :langs => %i[en]
+activate :i18n, langs: %i(en)
 activate :relative_assets
 
 set :relative_links, true
 
 activate :deploy do |deploy|
   deploy.deploy_method = :rsync
-  deploy.host          = 'florian.dejonckhee.re'
-  deploy.path          = '/srv/http/florian.dejonckhee.re/'
+  deploy.host          = "florian.dejonckhee.re"
+  deploy.path          = "/srv/http/florian.dejonckhee.re/"
 
   # Optional Settings
-  deploy.user     = 'florian'
+  deploy.user = "florian"
   # deploy.password = 'secret' # no default
 
   deploy.build_before = true # default: false
@@ -29,9 +29,9 @@ end
 # https://middlemanapp.com/basics/layouts/
 
 # Per-page layout changes
-page '/*.xml', :layout => false
-page '/*.json', :layout => false
-page '/*.txt', :layout => false
+page "/*.xml", layout: false
+page "/*.json", layout: false
+page "/*.txt", layout: false
 
 # With alternative layout
 # page '/path/to/file.html', layout: 'other_layout'
