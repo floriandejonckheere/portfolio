@@ -15,8 +15,8 @@ set :relative_links, true
 
 activate :deploy do |deploy|
   deploy.deploy_method = :rsync
-  deploy.host          = "florian.dejonckhee.re"
-  deploy.path          = "/srv/http/florian.dejonckhee.re/"
+  deploy.host          = "dejonckhee.re"
+  deploy.path          = "/data/docker/volumes/thalarion_http/_data/florian.dejonckhee.re/"
 
   # Optional Settings
   deploy.user = "florian"
