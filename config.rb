@@ -16,10 +16,10 @@ set :relative_links, true
 activate :deploy do |deploy|
   deploy.deploy_method = :rsync
   deploy.host          = "dejonckhee.re"
-  deploy.path          = "/data/docker/volumes/thalarion_http/_data/florian.dejonckhee.re/"
+  deploy.path          = "/mnt/volume/docker/thalarion_http/_data/florian.dejonckhee.re/"
 
   # Optional Settings
-  deploy.user = "florian"
+  deploy.user = "cloud"
   # deploy.password = 'secret' # no default
 
   deploy.build_before = true # default: false
