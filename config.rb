@@ -15,8 +15,8 @@ set :relative_links, true
 
 activate :deploy do |deploy|
   deploy.deploy_method = :rsync
-  deploy.host          = "dejonckhee.re"
-  deploy.path          = "/mnt/volume/docker/thalarion_http/_data/florian.dejonckhee.re/"
+  deploy.host          = "web.cloud.dejonckhee.re"
+  deploy.path          = "/mnt/default/docker/volumes/nginx_http/_data/florian.dejonckhee.re/"
 
   # Optional Settings
   deploy.user = "cloud"
