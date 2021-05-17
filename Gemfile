@@ -13,6 +13,5 @@ gem "rubocop"
 gem "webrick"
 
 gem "middleman"
-gem "middleman-autoprefixer"
 gem "middleman-deploy", github: "middleman-contrib/middleman-deploy"
 gem "middleman-livereload"

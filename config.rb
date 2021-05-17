@@ -3,10 +3,6 @@
 # Activate and configure extensions
 # https://middlemanapp.com/advanced/configuration/#configuring-extensions
 
-activate :autoprefixer do |prefix|
-  prefix.browsers = "last 2 versions"
-end
-
 activate :livereload
 activate :i18n, langs: %i(en)
 activate :relative_assets
