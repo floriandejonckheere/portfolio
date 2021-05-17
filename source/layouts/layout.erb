@@ -23,7 +23,7 @@
   <body>
     <nav class="nav">
       <ul>
-        <% sitemap.resources.sort_by { |r| r.data.order || 0 }.each do |page| %>
+        <% sitemap.resources.each.sort_by { |r| r.data.order || 0 }.each do |page| %>
           <% next unless page.data.title %>
           <% next if page.data.sitemap == :ignore %>
           <li class="<%= 'active' if current_page == page %>">
