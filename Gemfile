@@ -10,6 +10,7 @@ end
 gem "bundler"
 gem "overcommit"
 gem "rubocop"
+gem "webrick"
 
 gem "middleman"
 gem "middleman-autoprefixer"
