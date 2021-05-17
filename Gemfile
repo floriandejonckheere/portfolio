@@ -10,8 +10,7 @@ end
 gem "bundler"
 gem "overcommit"
 gem "rubocop"
-gem "webrick"
 
-gem "middleman"
+gem "middleman", github: "middleman/middleman"
 gem "middleman-deploy", github: "middleman-contrib/middleman-deploy"
 gem "middleman-livereload"
