@@ -4,7 +4,7 @@
 # https://middlemanapp.com/advanced/configuration/#configuring-extensions
 
 activate :livereload
-activate :i18n, langs: %i(en)
+activate :i18n, langs: [:en]
 activate :relative_assets
 
 set :relative_links, true

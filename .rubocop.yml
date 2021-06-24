@@ -1,5 +1,12 @@
+AllCops:
+  NewCops: enable
+  Exclude:
+    - bin/*
+    - build/**/*
+  TargetRubyVersion: 3.0
+
 Layout/LineLength:
-  Max: 120
+  Enabled: false
 
 Layout/MultilineMethodCallIndentation:
   EnforcedStyle: indented
@@ -7,54 +14,32 @@ Layout/MultilineMethodCallIndentation:
 Layout/ParameterAlignment:
   EnforcedStyle: with_fixed_indentation
 
-Layout/SpaceAroundMethodCallOperator:
-  Enabled: true
-
 Lint/AssignmentInCondition:
   AllowSafeAssignment: true
-
-Lint/SafeNavigationWithEmpty:
-  Enabled: false
-
-Lint/RaiseException:
-  Enabled: true
-
-Lint/StructNewOverride:
-  Enabled: true
-
-Style/ExponentialNotation:
-  Enabled: true
-
-Style/HashEachMethods:
-  Enabled: true
-
-Style/HashTransformKeys:
-  Enabled: true
-
-Style/HashTransformValues:
-  Enabled: true
-
-Style/StringLiterals:
-  EnforcedStyle: double_quotes
 
 Style/FrozenStringLiteralComment:
   Enabled: true
 
+Lint/SafeNavigationWithEmpty:
+  Enabled: false
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: consistent_comma
+
 Style/TrailingCommaInArrayLiteral:
-  EnforcedStyleForMultiline: comma
+  EnforcedStyleForMultiline: consistent_comma
 
 Style/TrailingCommaInHashLiteral:
-  EnforcedStyleForMultiline: comma
-
-Style/RegexpLiteral:
-  EnforcedStyle: slashes
-  AllowInnerSlashes: false
+  EnforcedStyleForMultiline: consistent_comma
 
 Style/Documentation:
   Enabled: false
 
 Style/SymbolArray:
-  Enabled: false
+  EnforcedStyle: brackets
 
 Style/PercentLiteralDelimiters:
   PreferredDelimiters:
