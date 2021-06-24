@@ -1,3 +1,6 @@
+
+![Continuous Integration](https://github.com/floriandejonckheere/portfolio/workflows/Continuous%20Integration/badge.svg)
+
 # README
 
 This is the source code to [portfolio](https://florian.dejonckhee.re/).

@@ -3,6 +3,7 @@ AllCops:
   Exclude:
     - bin/*
     - build/**/*
+    - vendor/**/*
   TargetRubyVersion: 3.0
 
 Layout/LineLength:
