@@ -1,5 +1,6 @@
 
 ![Continuous Integration](https://github.com/floriandejonckheere/portfolio/workflows/Continuous%20Integration/badge.svg)
+![Deployment](https://img.shields.io/github/deployments/floriandejonckheere/portfolio/production?label=Deployment)
 
 # README
 
@@ -37,6 +38,9 @@ $ middleman build
 ```
 
 ## Deployment
+
+Github Actions automatically builds and deploys the website.
+For manual deployments:
 
 ```
 $ middleman deploy

@@ -16,7 +16,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          apk add build-base curl-dev git
+          apk add build-base curl-dev git nodejs
           apk add tar
 
       - name: Cache Gems
@@ -35,3 +35,16 @@ jobs:
 
       - name: Lint
         run: bundle exec rubocop --parallel --display-cop-names
+
+      - name: Build
+        run: bundle exec middleman build
+
+      - name: Deploy
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          source: build/
+          target: /mnt/default/docker/volumes/nginx_http/_data/florian.dejonckhee.re/
+          strip_components: 1
