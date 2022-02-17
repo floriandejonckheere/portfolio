@@ -9,7 +9,7 @@ jobs:
     environment: production
 
     container:
-      image: ruby:3.0-alpine
+      image: ruby:3.1-alpine
 
     steps:
       - uses: actions/checkout@v2
