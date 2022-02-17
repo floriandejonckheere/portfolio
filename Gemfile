@@ -7,5 +7,4 @@ gem "overcommit"
 gem "rubocop"
 
 gem "middleman", github: "middleman/middleman"
-gem "middleman-deploy", github: "middleman-contrib/middleman-deploy"
 gem "middleman-livereload"

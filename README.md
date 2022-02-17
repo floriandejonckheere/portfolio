@@ -40,8 +40,3 @@ $ middleman build
 ## Deployment
 
 Github Actions automatically builds and deploys the website.
-For manual deployments:
-
-```
-$ middleman deploy
-```

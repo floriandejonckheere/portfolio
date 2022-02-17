@@ -9,18 +9,6 @@ activate :relative_assets
 
 set :relative_links, true
 
-activate :deploy do |deploy|
-  deploy.deploy_method = :rsync
-  deploy.host          = "web.cloud.dejonckhee.re"
-  deploy.path          = "/mnt/default/docker/volumes/nginx_http/_data/florian.dejonckhee.re/"
-
-  # Optional Settings
-  deploy.user = "cloud"
-  # deploy.password = 'secret' # no default
-
-  deploy.build_before = true # default: false
-end
-
 # Layouts
 # https://middlemanapp.com/basics/layouts/
 
