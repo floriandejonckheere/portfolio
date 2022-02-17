@@ -23,6 +23,7 @@ jobs:
         run: bundle exec middleman build
 
       - name: Deploy
+        if: ${{ github.ref == 'refs/heads/master' }}
         uses: appleboy/scp-action@master
         with:
           host: ${{ secrets.SSH_HOST }}
