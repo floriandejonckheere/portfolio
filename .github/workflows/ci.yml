@@ -29,5 +29,5 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
           source: build/
-          target: /mnt/default/docker/volumes/nginx_http/_data/florian.dejonckhee.re/
+          target: /mnt/default/docker/volumes/fcloud_http/_data/florian.dejonckhee.re/
           strip_components: 1
