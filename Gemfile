@@ -2,9 +2,12 @@
 
 source "https://rubygems.org"
 
-gem "bundler"
+# Git hooks
 gem "overcommit"
+
+# Ruby linter
 gem "rubocop"
 
+# Hand-crafted frontend development
 gem "middleman", "~> 4.4"
 gem "middleman-livereload", "~> 3.4"

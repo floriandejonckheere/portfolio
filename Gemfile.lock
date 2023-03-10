@@ -137,7 +137,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bundler
   middleman (~> 4.4)
   middleman-livereload (~> 3.4)
   overcommit
