@@ -6,5 +6,5 @@ gem "bundler"
 gem "overcommit"
 gem "rubocop"
 
-gem "middleman", github: "middleman/middleman"
-gem "middleman-livereload"
+gem "middleman", "~> 4.4"
+gem "middleman-livereload", "~> 3.4"

@@ -43,7 +43,7 @@ page "/*.txt", layout: false
 
 helpers do
   def permalink_for(name)
-    "<a href=\"\##{name.parameterize}\" id=\"#{name.parameterize}\">#{name}</a>"
+    "<a href=\"##{name.parameterize}\" id=\"#{name.parameterize}\">#{name}</a>"
   end
 end
 
