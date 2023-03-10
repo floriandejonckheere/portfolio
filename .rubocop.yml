@@ -18,14 +18,29 @@ Layout/ParameterAlignment:
 Lint/AssignmentInCondition:
   AllowSafeAssignment: true
 
-Style/FrozenStringLiteralComment:
-  Enabled: true
-
 Lint/SafeNavigationWithEmpty:
   Enabled: false
 
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: true
+
+Style/PercentLiteralDelimiters:
+  PreferredDelimiters:
+    default: ()
+    "%i": "()"
+    "%I": "()"
+    "%r": "()"
+    "%w": "()"
+    "%W": "()"
+
 Style/StringLiterals:
   EnforcedStyle: double_quotes
+
+Style/SymbolArray:
+  EnforcedStyle: brackets
 
 Style/TrailingCommaInArguments:
   EnforcedStyleForMultiline: consistent_comma
@@ -36,17 +51,5 @@ Style/TrailingCommaInArrayLiteral:
 Style/TrailingCommaInHashLiteral:
   EnforcedStyleForMultiline: consistent_comma
 
-Style/Documentation:
-  Enabled: false
-
-Style/SymbolArray:
+Style/WordArray:
   EnforcedStyle: brackets
-
-Style/PercentLiteralDelimiters:
-  PreferredDelimiters:
-    default: ()
-    "%i": "()"
-    "%I": "()"
-    "%r": "()"
-    "%w": "()"
-    "%W": "()"
