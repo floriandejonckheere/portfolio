@@ -9,5 +9,5 @@ gem "overcommit"
 gem "rubocop"
 
 # Hand-crafted frontend development
-gem "middleman", "~> 4.4"
+gem "middleman", "~> 4.5"
 gem "middleman-livereload", "~> 3.4"
