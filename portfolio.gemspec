@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.description   = "Portfolio website"
   spec.homepage      = "https://florian.dejonckhee.re"
   spec.license       = "MIT"
-  spec.required_ruby_version = Gem::Requirement.new(">= 3.2")
+  spec.required_ruby_version = Gem::Requirement.new(">= 3.3")
 
   spec.metadata["source_code_uri"] = "https://github.com/floriandejonckheere/portfolio"
 
