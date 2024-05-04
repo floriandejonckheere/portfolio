@@ -1,10 +1,9 @@
 AllCops:
   NewCops: enable
+  SuggestExtensions: false
+  TargetRubyVersion: 3.3
   Exclude:
     - bin/*
-    - build/**/*
-    - vendor/**/*
-  TargetRubyVersion: 3.3
 
 Layout/LineLength:
   Enabled: false
@@ -18,18 +17,15 @@ Layout/ParameterAlignment:
 Lint/AssignmentInCondition:
   AllowSafeAssignment: true
 
-Lint/SafeNavigationWithEmpty:
-  Enabled: false
-
-Style/Documentation:
-  Enabled: false
-
 Style/FrozenStringLiteralComment:
   Enabled: true
 
+Style/HashAsLastArrayItem:
+  EnforcedStyle: no_braces
+
 Style/PercentLiteralDelimiters:
   PreferredDelimiters:
-    default: ()
+    default: "()"
     "%i": "()"
     "%I": "()"
     "%r": "()"
@@ -42,6 +38,9 @@ Style/StringLiterals:
 Style/SymbolArray:
   EnforcedStyle: brackets
 
+Style/WordArray:
+  EnforcedStyle: brackets
+
 Style/TrailingCommaInArguments:
   EnforcedStyleForMultiline: consistent_comma
 
@@ -50,6 +49,3 @@ Style/TrailingCommaInArrayLiteral:
 
 Style/TrailingCommaInHashLiteral:
   EnforcedStyleForMultiline: consistent_comma
-
-Style/WordArray:
-  EnforcedStyle: brackets
