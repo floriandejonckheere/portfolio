@@ -10,7 +10,6 @@ GEM
       public_suffix (>= 2.0.2, < 6.0)
     ast (2.4.2)
     backports (3.24.1)
-    childprocess (5.0.0)
     coffee-script (2.4.1)
       coffee-script-source
       execjs
@@ -37,7 +36,6 @@ GEM
     http_parser.rb (0.8.0)
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
-    iniparse (1.5.0)
     json (2.7.2)
     kramdown (2.4.0)
       rexml
@@ -84,10 +82,6 @@ GEM
       middleman-core (>= 3.3)
       rack-livereload (~> 0.3.15)
     minitest (5.20.0)
-    overcommit (0.63.0)
-      childprocess (>= 0.6.3, < 6)
-      iniparse (~> 1.4)
-      rexml (~> 3.2)
     padrino-helpers (0.15.3)
       i18n (>= 0.6.7, < 2)
       padrino-support (= 0.15.3)
@@ -144,7 +138,6 @@ PLATFORMS
 DEPENDENCIES
   middleman (~> 4.5)
   middleman-livereload (~> 3.4)
-  overcommit
   rubocop
 
 BUNDLED WITH

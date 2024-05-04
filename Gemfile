@@ -2,9 +2,6 @@
 
 source "https://rubygems.org"
 
-# Git hooks
-gem "overcommit"
-
 # Ruby linter
 gem "rubocop"
 
