@@ -17,7 +17,9 @@ jobs:
           bundler-cache: true
 
       - name: Lint
-        run: bundle exec rubocop --parallel --display-cop-names
+        run: |
+          bundle exec rubocop --parallel --display-cop-names
+          bundle exec erblint .
 
       - name: Build
         run: bundle exec middleman build

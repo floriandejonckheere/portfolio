@@ -5,6 +5,10 @@ AllCops:
   Exclude:
     - bin/*
 
+Layout/InitialIndentation:
+  Exclude:
+    - source/**/*
+
 Layout/LineLength:
   Enabled: false
 
@@ -14,11 +18,17 @@ Layout/MultilineMethodCallIndentation:
 Layout/ParameterAlignment:
   EnforcedStyle: with_fixed_indentation
 
+Layout/TrailingEmptyLines:
+  Exclude:
+    - source/**/*
+
 Lint/AssignmentInCondition:
   AllowSafeAssignment: true
 
 Style/FrozenStringLiteralComment:
   Enabled: true
+  Exclude:
+    - source/**/*
 
 Style/HashAsLastArrayItem:
   EnforcedStyle: no_braces

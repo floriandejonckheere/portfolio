@@ -2,7 +2,8 @@
 
 source "https://rubygems.org"
 
-# Ruby linter
+# Ruby linters
+gem "erb_lint"
 gem "rubocop"
 
 # Hand-crafted frontend development
