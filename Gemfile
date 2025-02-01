@@ -12,6 +12,9 @@ gem "mutex_m"
 gem "ostruct"
 gem "rdoc"
 
+# Lock concurrent-ruby to prevent 'uninitialized constant ActiveSupport::LoggerThreadSafeLevel::Logger'
+gem "concurrent-ruby", "1.3.4"
+
 # Ruby linters
 gem "erb_lint"
 gem "rubocop"
