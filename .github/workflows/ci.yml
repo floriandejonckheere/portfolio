@@ -19,7 +19,7 @@ jobs:
       - name: Lint
         run: |
           bundle exec rubocop --parallel --display-cop-names
-          bundle exec erblint .
+          bundle exec erb_lint .
 
       - name: Build
         run: bundle exec middleman build
