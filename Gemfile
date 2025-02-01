@@ -2,6 +2,16 @@
 
 source "https://rubygems.org"
 
+# Builtin gems
+gem "base64"
+gem "benchmark"
+gem "bigdecimal"
+gem "csv"
+gem "logger"
+gem "mutex_m"
+gem "ostruct"
+gem "rdoc"
+
 # Ruby linters
 gem "erb_lint"
 gem "rubocop"
