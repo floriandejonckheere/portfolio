@@ -12,9 +12,8 @@ Gem::Specification.new do |spec|
   spec.license       = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 3.4")
 
-  spec.metadata["source_code_uri"] = "https://github.com/floriandejonckheere/portfolio"
-
   spec.metadata = {
+    "source_code_uri" => "https://github.com/floriandejonckheere/portfolio",
     "rubygems_mfa_required" => "true",
   }
 end
