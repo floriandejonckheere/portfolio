@@ -13,7 +13,7 @@ gem "ostruct"
 gem "rdoc"
 
 # Lock concurrent-ruby to prevent 'uninitialized constant ActiveSupport::LoggerThreadSafeLevel::Logger'
-gem "concurrent-ruby", "1.3.4"
+gem "concurrent-ruby", "1.3.5"
 
 # Ruby linters
 gem "erb_lint"
@@ -21,4 +21,4 @@ gem "rubocop"
 
 # Hand-crafted frontend development
 gem "middleman", "~> 4.5"
-gem "middleman-livereload", "~> 3.4"
+gem "middleman-livereload", "~> 3.5"
