@@ -20,5 +20,5 @@ gem "erb_lint"
 gem "rubocop"
 
 # Hand-crafted frontend development
-gem "middleman", "~> 4.5"
+gem "middleman", "~> 4.6"
 gem "middleman-livereload", "~> 3.5"
