@@ -13,7 +13,7 @@ gem "ostruct"
 gem "rdoc"
 
 # Lock concurrent-ruby to prevent 'uninitialized constant ActiveSupport::LoggerThreadSafeLevel::Logger'
-gem "concurrent-ruby", "1.3.6"
+gem "concurrent-ruby", "1.3.7"
 
 # Ruby linters
 gem "erb_lint"
